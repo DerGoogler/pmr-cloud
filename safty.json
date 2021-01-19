@@ -1,0 +1,16 @@
+<page>
+{#=include((/embeds/navbar))#}
+{#gitmd#}
+
+# Safty 
+    
+- [Privacy Policy](https://dergoogler.github.io/pmr/?/Der-Googler/#/privacy-policy/)
+- [Terms & Conditions](https://dergoogler.github.io/pmr/?/Der-Googler/#/terms-conditions/)
+
+
+```
+Copyright (c) 2021 Der_Googer
+```
+
+{#gitmd#}
+</page>
