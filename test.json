@@ -1,38 +1,56 @@
-{#gitmd#}
 {#=include((/embeds/navbar))#}
-</page>
-
- # German
-**Ein bissen hier ein bissen da! 😃**          
-*Das Erwartet euch in diesem Update:*         
-       
-🖤 - ListView Design Fehler wurde behoben und wird jetzt für Light / Dark normal angezeigt.       
-📲 - SaveTTS wurde ein kleines bisschen überarbeitet. Das Icon ist in die Toolbar gewandert und der Abbrechen Button hat Abschied genommen.          
-🔊 - Komfort? Denn bekommst du! Du hast jetzt die Möglichkeit deine Lautstärke direkt auf dem Bildschirm einstellen. (Allgemeine Max Lautstärke wird vom Gerät vorgegeben.)         
-👼- Der Pitch und Speech wurde überarbeitet. Du hast jetzt die Möglichkeit es in fünf Optionen zu ändern: Sehr langsam, Langsam, Sehr schnell und Schnell. (Pitch ist ebenfalls so).        
-🌐 - Dank dem neune Mini In-App Browser ist es jetzt noch einfacher in den Issues zu Stöbern (Anmeldungen, sowieso käufe sind nicht empfohlen)         
-🐭 - In jeden Issues steht kanz unten „Powerd by GitHub“       
-😏 - Ein „Secret“ wurde ebenfalls hinzugefügt. Mehr sage ich nicht.        
-❄️ - Ein Update Checker wurde Hinzugefügt.        
-📦 - Mehr Reichweite ist wichtig. Deshalb wurde die Min SDK auf 17 gestellt.      
-⚓️ - Die Statusbar wird jetzt vom Darkmode und Normalen modes unterstützt (Ausgenommen sind Geräte unter der API 21).     
-🔐 - Aufgrund neuer Funktionen wird der Datenschutz ebenfalls aktualisiert.      
-
-# English
-**A bit here a bit there! 😃**       
-*This is what you can expect in this update:*       
-        
-🖤 - ListView design bug has been fixed and is now displayed normally for light / dark.      
-📲 - SaveTTS has been revised a little bit. The icon has moved to the toolbar and the cancel button has said goodbye.        
-🔊 - comfort? Because you get! You now have the option of adjusting your volume directly on the screen. (General maximum volume is specified by the device.)       
-👼- The pitch and speech have been revised. You now have the option to change it in five options: Very Slow, Slow, Very Fast and Fast. (Pitch is like that too).      
-🌐 - Thanks to the new mini in-app browser, it is now even easier to rummage through the issues (registrations, purchases are not recommended anyway)     
-🐭 - In every issue it says "Powerd by GitHub" at the bottom      
-😏 - A "Secret" has also been added. I don't say more.     
-❄️ - An update checker has been added.      
-📦 - More reach is important. Therefore the Min SDK was set to 17.       
-⚓️ - The status bar is now supported by Darkmode and Normal modes (except for devices under API 21).
-🔐 - Due to new functions, data protection will also be updated.        
-
+{#gitmd#}
 <page>
+
+# Custom translate
+here will you how to translate page with html
+
+## Create the HTML tag
+```javascript
+class TTSLANG extends HTMLElement {
+    connectedCallback() {
+        if (getUrlParam("lang") == "en") {
+            this.innerHTML = this.getAttribute('en');
+        } else if (getUrlParam("lang") == "de") {
+            this.innerHTML = this.getAttribute('de');
+        }
+    }
+}
+customElements.define("dg-lang", TTSLANG);
+```
+output will be `<dg-lang></dg-lang>`
+
+## Setup the HTML tag
+so use you this
+
+```html
+<!-- ... Some content ... -->
+<div id="what_ever_you_use">
+...
+<dg-lang de="Zugriff" en="Access"></dg-lang>
+...
+</div>
+<!-- ... Some content ... -->
+```
+
+## How to get the translation 
+
+Code (get url param)
+```javascript
+function getUrlParam(param) {
+    param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
+    var regex = new RegExp("[?]" + param + "=([^&#]*)");
+    var url = decodeURIComponent(window.location.href);
+    var match = regex.exec(url);
+    return match ? match[1] : "";
+}
+```
+
+**DE**
+`https://example.com/?lang=de --> <dg-lang de="Zugriff" en="Access">Zugriff</dg-lang>`
+
+**EN**
+`https://example.com/?lang=en --> <dg-lang de="Zugriff" en="Access">Access</dg-lang>`
+ 
+</page>
 {#gitmd#}
