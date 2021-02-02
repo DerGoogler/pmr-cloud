@@ -1,5 +1,4 @@
 # Custom translate
-<!-- position: 1 -->
 here will you how to translate page with html
 
 ## Create the HTML tag
