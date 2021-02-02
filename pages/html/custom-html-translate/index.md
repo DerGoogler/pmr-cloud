@@ -1,5 +1,5 @@
 # Custom translate
-here will you how to translate page with html
+here will you how to translate page with html fhdgfhgfhghgf
 
 ## Create the HTML tag
 ```javascript
